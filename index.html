@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jaylee Designs • Portfolio</title>
+    <link rel="preload" as="image" href="images/gemini-creative-transparent-logo.svg" />
+    <link rel="preload" as="image" href="images/me-hero-graphic.svg" />
+    <link rel="preload" as="image" href="images/case-study-branding.svg" />
+    <link rel="preload" as="image" href="images/case-study-web.svg" />
+    <link rel="preload" as="image" href="images/case-study-video.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header glass">
+      <a class="brand" href="#top" aria-label="Jaylee Designs home">
+        <img src="images/gemini-creative-transparent-logo.svg" alt="Gemini Creative transparent logo" class="brand__logo" />
+        <span class="brand__text">Jaylee Designs</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#portfolio">Portfolio</a>
+        <a href="#case-studies">Case Studies</a>
+        <a href="#contact">Contact</a>
+        <a href="#request">Project Request</a>
+        <a href="#videos">Videos</a>
+      </nav>
+      <button id="themeToggle" class="btn btn--ghost" aria-label="Toggle light and dark mode">Theme</button>
+    </header>
+
+    <main id="top">
+      <section class="hero animate-fade-up">
+        <div>
+          <p class="eyebrow">Creative Direction • Web • Motion</p>
+          <h1>Build a portfolio that sells your best work before the first call.</h1>
+          <p>
+            A modern creative studio site with sortable portfolio views, conversion-focused request flow,
+            animated storytelling, and embedded media.
+          </p>
+          <div class="hero__actions">
+            <a href="#request" class="btn">Start a project request</a>
+            <a href="#portfolio" class="btn btn--ghost">Explore work</a>
+          </div>
+        </div>
+        <img src="images/me-hero-graphic.svg" alt="Illustrated graphic of Jaylee at work" class="hero__graphic floating" />
+      </section>
+
+      <section id="videos" class="videos animate-fade-up">
+        <div class="section-heading">
+          <h2>Video Highlights</h2>
+          <p>Featured motion work and behind-the-scenes production clips.</p>
+        </div>
+        <div class="video-grid">
+          <article class="card">
+            <h3>Brand Campaign Reel</h3>
+            <div class="video-wrap">
+              <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Brand campaign reel" loading="lazy" allowfullscreen></iframe>
+            </div>
+          </article>
+          <article class="card">
+            <h3>UX Prototype Walkthrough</h3>
+            <div class="video-wrap">
+              <iframe src="https://www.youtube.com/embed/ysz5S6PUM-U" title="UX prototype walkthrough" loading="lazy" allowfullscreen></iframe>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="portfolio" class="portfolio animate-fade-up">
+        <div class="section-heading">
+          <h2>Portfolio</h2>
+          <p>Sort by discipline and quickly find relevant project types.</p>
+        </div>
+        <div class="toolbar">
+          <label for="sortSelect">Sort:</label>
+          <select id="sortSelect">
+            <option value="featured">Featured first</option>
+            <option value="name">Name (A–Z)</option>
+            <option value="newest">Newest first</option>
+          </select>
+          <div class="chips" role="tablist" aria-label="Portfolio categories">
+            <button class="chip is-active" data-filter="all">All</button>
+            <button class="chip" data-filter="branding">Branding</button>
+            <button class="chip" data-filter="web">Web Design</button>
+            <button class="chip" data-filter="video">Video + Motion</button>
+            <button class="chip" data-filter="social">Social Content</button>
+          </div>
+          <input id="searchInput" type="search" placeholder="Search projects..." aria-label="Search portfolio projects" />
+        </div>
+        <div id="portfolioGrid" class="portfolio-grid" aria-live="polite"></div>
+      </section>
+
+      <section id="case-studies" class="case-studies animate-fade-up">
+        <div class="section-heading">
+          <h2>Case Studies</h2>
+          <p>Selected work with image-backed outcomes and process snapshots.</p>
+        </div>
+        <div class="case-grid">
+          <article class="case" style="--bg:url('images/case-study-branding.svg')">
+            <h3>Gemini Creative Rebrand</h3>
+            <p>Positioned a boutique creative studio for premium retainers.</p>
+            <span>+32% qualified inquiries</span>
+          </article>
+          <article class="case" style="--bg:url('images/case-study-web.svg')">
+            <h3>DTC Beauty Ecommerce UX</h3>
+            <p>Redesigned high-friction PDP and checkout pathways.</p>
+            <span>+21% conversion rate</span>
+          </article>
+          <article class="case" style="--bg:url('images/case-study-video.svg')">
+            <h3>Social Video Launch System</h3>
+            <p>Created a reusable multi-channel motion content pipeline.</p>
+            <span>2.7x average engagement</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="request animate-fade-up">
+        <div class="section-heading">
+          <h2>Contact + Project Request</h2>
+          <p>
+            Start with quick contact options, then walk through a progressive intake flow to qualify your project.
+          </p>
+        </div>
+        <div id="request"></div>
+        <div class="contact-quick card">
+          <p><strong>Email:</strong> <a href="mailto:hello@jayleedesigns.com">hello@jayleedesigns.com</a></p>
+          <p><strong>Response time:</strong> 1–2 business days</p>
+        </div>
+        <form id="funnelForm" class="funnel card">
+          <div class="steps" aria-hidden="true">
+            <span class="step is-current">1</span>
+            <span class="step">2</span>
+            <span class="step">3</span>
+            <span class="step">4</span>
+          </div>
+
+          <div class="funnel-step" data-step="1">
+            <label>Name <input required name="name" /></label>
+            <label>Email <input required type="email" name="email" /></label>
+          </div>
+          <div class="funnel-step" data-step="2" hidden>
+            <label>Project Type
+              <select required name="projectType">
+                <option value="">Choose one…</option>
+                <option>Brand Identity</option>
+                <option>Website Design</option>
+                <option>Video Production</option>
+                <option>Social Content System</option>
+              </select>
+            </label>
+            <label>Budget Range
+              <select required name="budget">
+                <option value="">Choose one…</option>
+                <option>$2k–$5k</option>
+                <option>$5k–$10k</option>
+                <option>$10k–$25k</option>
+                <option>$25k+</option>
+              </select>
+            </label>
+          </div>
+          <div class="funnel-step" data-step="3" hidden>
+            <label>Timeline
+              <select required name="timeline">
+                <option value="">Choose one…</option>
+                <option>ASAP</option>
+                <option>Within 30 days</option>
+                <option>Next quarter</option>
+              </select>
+            </label>
+            <label>Goals <textarea name="goals" rows="4" placeholder="What does success look like?"></textarea></label>
+          </div>
+          <div class="funnel-step" data-step="4" hidden>
+            <p class="review">Review complete. Submit to receive a scoped response packet within 1–2 business days.</p>
+          </div>
+
+          <div class="funnel-actions">
+            <button type="button" class="btn btn--ghost" id="backBtn" disabled>Back</button>
+            <button type="button" class="btn" id="nextBtn">Next</button>
+            <button type="submit" class="btn" id="submitBtn" hidden>Submit request</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <button id="toTop" class="to-top" aria-label="Back to top">↑</button>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Jaylee Designs • Built for stronger creative conversions.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

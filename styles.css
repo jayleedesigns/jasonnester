@@ -48,6 +48,7 @@ nav a:hover { color: var(--text); }
 
 main { max-width: 1100px; margin: 0 auto; padding: 1rem; }
 section { margin: 2.5rem 0; }
+section[id] { scroll-margin-top: 90px; }
 .section-heading p { color: var(--muted); }
 .hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: 1.4rem; align-items: center; }
 .eyebrow { color: var(--accent-2); letter-spacing: .08em; text-transform: uppercase; font-size: .8rem; }
@@ -111,6 +112,16 @@ section { margin: 2.5rem 0; }
 .case span { display: inline-block; margin-top: .7rem; color: var(--accent-2); font-weight: 700; }
 
 .funnel { max-width: 720px; }
+.contact-quick {
+  max-width: 720px;
+  margin-bottom: 0.9rem;
+}
+.contact-quick p {
+  margin: 0.25rem 0;
+}
+.contact-quick a {
+  color: var(--accent);
+}
 .steps { display: flex; gap: .5rem; margin-bottom: 1rem; }
 .step { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--border); }
 .step.is-current { border-color: var(--accent); color: var(--accent); }

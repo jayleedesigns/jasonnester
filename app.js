@@ -1,12 +1,12 @@
 const portfolioData = [
-  { name: 'Gemini Creative Identity System', category: 'branding', type: 'Brand Identity', year: 2026, featured: true },
-  { name: 'The Atelier Marketing Site', category: 'web', type: 'Website Design', year: 2025, featured: true },
-  { name: 'GlowHouse Product Launch Trailer', category: 'video', type: 'Video + Motion', year: 2026, featured: false },
-  { name: 'Quarterly Instagram Reels Pipeline', category: 'social', type: 'Social Content', year: 2024, featured: false },
-  { name: 'Founder Thought Leadership Kit', category: 'social', type: 'Social Content', year: 2025, featured: true },
-  { name: 'Luma Wellness Web Refresh', category: 'web', type: 'Website Design', year: 2024, featured: false },
-  { name: 'Northline VC Brand Refresh', category: 'branding', type: 'Brand Identity', year: 2023, featured: false },
-  { name: 'Event Recap Motion Highlights', category: 'video', type: 'Video + Motion', year: 2025, featured: false }
+  { name: 'East River Cobras Team Identity', category: 'branding', type: 'Brand Identity', year: 2026, featured: true },
+  { name: "Sam's Pizza Website + Menu Refresh", category: 'web', type: 'Website Design', year: 2025, featured: true },
+  { name: 'OnCall Services Promo Launch Video', category: 'video', type: 'Video + Motion', year: 2026, featured: true },
+  { name: 'Gemini Creative Launch Highlights', category: 'social', type: 'Social Content', year: 2026, featured: true },
+  { name: 'Gemini Creative Service Explainer Set', category: 'video', type: 'Video + Motion', year: 2025, featured: false },
+  { name: 'Gemini Creative Client Portal UI', category: 'web', type: 'Website Design', year: 2024, featured: false },
+  { name: 'Gemini Creative Brand Guidelines', category: 'branding', type: 'Brand Identity', year: 2024, featured: false },
+  { name: 'Gemini Creative Retainer Social Pack', category: 'social', type: 'Social Content', year: 2025, featured: false }
 ];
 
 const grid = document.getElementById('portfolioGrid');

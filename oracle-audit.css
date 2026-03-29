@@ -1,0 +1,191 @@
+.audit-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1d2f6f, #090f21 50%);
+}
+
+.audit-main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 4rem;
+}
+
+.audit-step {
+  display: grid;
+  gap: 1rem;
+}
+
+.audit-step[data-step="input"] {
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 1.5rem;
+  min-height: calc(100vh - 130px);
+}
+
+.audit-intro h1 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  margin: 0.2rem 0 0.8rem;
+}
+
+.audit-intro p {
+  color: var(--muted);
+}
+
+.audit-card {
+  background: color-mix(in oklab, var(--surface), transparent 12%);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1rem;
+}
+
+#auditForm {
+  display: grid;
+  gap: 0.9rem;
+}
+
+#auditForm label {
+  display: grid;
+  gap: 0.4rem;
+  font-weight: 600;
+}
+
+.audit-cta {
+  width: 100%;
+  margin-top: 0.2rem;
+}
+
+.audit-center {
+  text-align: center;
+}
+
+.spinner {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 4px solid var(--border);
+  border-top-color: var(--accent);
+  margin: 0 auto 1rem;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.progress-track {
+  width: min(560px, 100%);
+  height: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 1rem auto 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--accent), #8f63ff);
+  transition: width 0.25s ease;
+}
+
+.audit-report-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.8rem;
+}
+
+.metric-card {
+  padding: 0.9rem;
+}
+
+.metric-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.metric-card strong {
+  font-size: 1.7rem;
+}
+
+.rival-card {
+  border-color: color-mix(in srgb, #e45454, var(--border));
+}
+
+.vision-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.mockup-area {
+  margin-top: 0.8rem;
+  min-height: 260px;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.mockup-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.audit-upgrade {
+  text-align: center;
+}
+
+.picker-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+.choice {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  padding: 0.6rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.choice.is-selected {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent) inset;
+}
+
+#nextSteps {
+  margin: 0.4rem auto 0;
+  text-align: left;
+  max-width: 640px;
+}
+
+#nextSteps li {
+  margin: 0.4rem 0;
+}
+
+@media (max-width: 860px) {
+  .audit-step[data-step="input"],
+  .picker-grid {
+    grid-template-columns: 1fr;
+  }
+}

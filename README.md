@@ -1,37 +1,49 @@
-## Welcome to GitHub Pages
+## Gemini Creative: WordPress Upload + Live Email Booking
 
-You can use the [editor on GitHub](https://github.com/jayleedesigns/jasonnester/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This repo includes two WordPress-ready pieces:
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+1. `wordpress-magic-audit.xml` → imports the **Magic Audit** page UI.
+2. `wordpress-plugin/gemini-magic-audit-mailer/gemini-magic-audit-mailer.php` → WordPress plugin entry file (uploadable plugin folder) that receives bookings and emails:
+   - `geminicreativeNF@gmail.com`
+   - the lead email entered in the form.
 
-### Markdown
+## How to put it up (production steps)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### 1) Upload and activate the mailer plugin
+1. In WordPress Admin, go to **Plugins → Add New → Upload Plugin**.
+2. From this repo root, build the ZIP (binary artifacts are intentionally not stored in git):
+   ```bash
+   cd wordpress-plugin
+   zip -r gemini-magic-audit-mailer.zip gemini-magic-audit-mailer
+   ```
+3. Upload the generated `wordpress-plugin/gemini-magic-audit-mailer.zip` file and activate **Gemini Magic Audit Mailer**.
+4. (SFTP alternative) upload the `wordpress-plugin/gemini-magic-audit-mailer/` folder to `wp-content/plugins/`.
 
-```markdown
-Syntax highlighted code block
+### 2) Import the Magic Audit page from XML
+1. Go to **Tools → Import**.
+2. Install/run the **WordPress** importer.
+3. Upload `wordpress-magic-audit.xml`.
+4. Open the new **Magic Audit** page and publish/update if prompted.
+5. Add it to your nav under **Appearance → Menus**.
 
-# Header 1
-## Header 2
-### Header 3
+### 3) Make sure WordPress can send email
+For reliable delivery, install SMTP (example: WP Mail SMTP) and connect your mail provider.
 
-- Bulleted
-- List
+### 4) Test end-to-end
+1. Open `/magic-audit/`.
+2. Complete a booking flow.
+3. Confirm you receive one email at `geminicreativeNF@gmail.com` and one confirmation at the user email.
 
-1. Numbered
-2. List
+## API details (already wired in page script)
+The page posts bookings to:
 
-**Bold** and _Italic_ and `Code` text
+- `POST /wp-json/gc-audit/v1/book`
 
-[Link](url) and ![Image](src)
-```
+Payload fields:
+- `siteUrl`
+- `competitorUrl`
+- `leadEmail`
+- `selectedDate`
+- `selectedTime`
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jayleedesigns/jasonnester/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+If plugin or SMTP is misconfigured, the page now shows an inline error message instead of a false “email sent” success statement.

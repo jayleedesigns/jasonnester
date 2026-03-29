@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemini Creative • Magic Audit</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="oracle-audit.css" />
+  </head>
+  <body class="audit-page">
+    <header class="site-header glass">
+      <a class="brand" href="index.html#top" aria-label="Gemini Creative home">
+        <img src="images/gemini-creative-transparent-logo.svg" alt="Gemini Creative logo" class="brand__logo" />
+        <span class="brand__text">Gemini Creative</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="index.html#portfolio">Portfolio</a>
+        <a href="index.html#case-studies">Case Studies</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <a href="index.html" class="btn btn--ghost">Back to Site</a>
+    </header>
+
+    <main class="audit-main" id="auditApp">
+      <section class="audit-step" data-step="input">
+        <div class="audit-intro">
+          <p class="eyebrow">AI-Powered Analysis</p>
+          <h1>Stop Guessing. Start Winning.</h1>
+          <p>
+            Run a conversion-focused website audit experience inspired by your concept. Enter your site, add a competitor,
+            and receive a guided strategy flow.
+          </p>
+        </div>
+
+        <form id="auditForm" class="audit-card" novalidate>
+          <label>
+            Your Website URL
+            <input type="url" id="websiteUrl" required placeholder="https://yourbrand.com" />
+          </label>
+          <label>
+            Competitor URL (optional)
+            <input type="url" id="competitorUrl" placeholder="https://rivalbrand.com" />
+          </label>
+          <label>
+            Report Recipient
+            <input type="email" id="reportEmail" required placeholder="hello@company.com" />
+          </label>
+          <button class="btn audit-cta" type="submit">Reveal the Magic →</button>
+        </form>
+      </section>
+
+      <section class="audit-step" data-step="scanning" hidden>
+        <div class="audit-center">
+          <div class="spinner" aria-hidden="true"></div>
+          <h2>Summoning Data...</h2>
+          <p id="scanTarget">Casting spells on your website</p>
+          <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-fill" id="scanProgress"></div>
+          </div>
+          <p class="progress-text" id="scanPercent">0%</p>
+        </div>
+      </section>
+
+      <section class="audit-step" data-step="report" hidden>
+        <div class="audit-report-head audit-card">
+          <div>
+            <p class="eyebrow">Magic Score</p>
+            <h2 id="magicHeadline">Strong — 82</h2>
+            <p id="auditAnalyzedFor"></p>
+          </div>
+          <button id="listenReportBtn" class="btn btn--ghost" type="button">🔊 Listen to report</button>
+        </div>
+
+        <div class="metric-grid" id="metricGrid"></div>
+
+        <aside id="rivalCard" class="audit-card rival-card" hidden>
+          <h3>Rivalry Snapshot</h3>
+          <p id="rivalText"></p>
+        </aside>
+
+        <section class="audit-card">
+          <div class="vision-header">
+            <h3>AI Visionary Mockup</h3>
+            <button id="generateVisionBtn" class="btn" type="button">✨ Generate</button>
+          </div>
+          <div class="mockup-area" id="mockupArea">
+            <p>Click generate to preview your brand's future hero section.</p>
+          </div>
+        </section>
+
+        <section class="audit-card audit-upgrade">
+          <h3>Your brand is one spell away from greatness.</h3>
+          <button id="goBookingBtn" class="btn" type="button">Claim Your Free Strategy Session</button>
+        </section>
+      </section>
+
+      <section class="audit-step" data-step="booking" hidden>
+        <div class="audit-card">
+          <h2>Pick Your Magic Hour</h2>
+          <p>Select a date and time for your strategy session.</p>
+          <div class="picker-grid">
+            <div>
+              <h3>Select Date</h3>
+              <div class="choice-grid" id="dateChoices"></div>
+            </div>
+            <div>
+              <h3>Select Time</h3>
+              <div class="choice-grid" id="timeChoices"></div>
+            </div>
+          </div>
+          <button id="finalizeBtn" class="btn audit-cta" type="button" disabled>Finalize My Session</button>
+          <button id="backToReportBtn" class="btn btn--ghost" type="button">Back to Audit Results</button>
+        </div>
+      </section>
+
+      <section class="audit-step" data-step="success" hidden>
+        <div class="audit-card audit-center">
+          <h2>🎉 Magic Confirmed!</h2>
+          <p id="successSummary"></p>
+          <ul id="nextSteps"></ul>
+          <button id="newAuditBtn" class="btn btn--ghost" type="button">Start New Audit</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="oracle-audit.js"></script>
+  </body>
+</html>
